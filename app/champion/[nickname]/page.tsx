@@ -1,6 +1,8 @@
 import { Image } from '@nextui-org/image'
 import { Pagination } from '@nextui-org/pagination'
 
+import Chart from './chart'
+
 export default function ChampionPage() {
   return (
     <>
@@ -8,7 +10,7 @@ export default function ChampionPage() {
         <Image isBlurred alt="Caitlyn" src="/Caitlyn.webp" />
         <Pagination initialPage={1} total={10} />
       </div>
-      <div>육각형 그래프</div>
+      <Chart />
     </>
   )
 }
