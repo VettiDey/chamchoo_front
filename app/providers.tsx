@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { ThemeProviderProps } from 'next-themes/dist/types'
 import { SWRConfig } from 'swr'
+import { Provider } from 'jotai'
 
 import { fetcher } from '@/lib/fetcher'
 
@@ -24,7 +25,9 @@ export function Providers({ children, themeProps }: ProvidersProps) {
           fetcher: fetcher
         }}
       >
-        <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+        <Provider>
+          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+        </Provider>
       </SWRConfig>
     </NextUIProvider>
   )

@@ -14,6 +14,8 @@ import {
   Legend
 } from 'chart.js'
 
+import { Champion } from '@/types/api'
+
 ChartJS.register(
   RadialLinearScale,
   PointElement,
@@ -24,21 +26,25 @@ ChartJS.register(
 )
 
 interface RadarChartProps {
-  data: {
-    name: string
-    stats: number[]
-  }
+  data: Champion
 }
 
 const RadarChart = ({ data }: RadarChartProps) => {
   const chartData = {
-    labels: ['Attack', 'Defense', 'Magic', 'Difficulty'],
+    labels: ['공격', '로밍', '수비', '안정성', '야생성', '캐리성'],
     datasets: [
       {
-        label: data.name,
-        data: data.stats,
-        backgroundColor: 'rgba(34, 202, 236, 0.2)',
-        borderColor: 'rgba(34, 202, 236, 1)',
+        label: data.champion,
+        data: Object.entries(data.average_features).map(([, value]) => value),
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgb(255, 99, 132)',
+        borderWidth: 1
+      },
+      {
+        label: '나의 데이터',
+        data: Object.entries(data.user_features).map(([, value]) => value),
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
         borderWidth: 1
       }
     ]
