@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from '@nextui-org/button'
 
 import RadarChart from '@/components/radar-chart'
+import { AnalysisResult } from '@/types/api'
 
 const anotherChampion = {
   name: 'Ahri',
@@ -15,8 +16,14 @@ const initialChampion = {
   stats: [7, 3, 1, 4]
 }
 
-export default function Chart() {
+interface Props {
+  data: AnalysisResult
+}
+
+export default function Chart({ data }: Props) {
   const [champion, setChampion] = useState(initialChampion)
+
+  console.log(data)
 
   const switchChampion = () => {
     setChampion(champion.name === 'Aatrox' ? anotherChampion : initialChampion)
