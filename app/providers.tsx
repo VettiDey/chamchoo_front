@@ -22,7 +22,8 @@ export function Providers({ children, themeProps }: ProvidersProps) {
     <NextUIProvider navigate={router.push}>
       <SWRConfig
         value={{
-          fetcher: fetcher
+          fetcher: fetcher,
+          loadingTimeout: 10000
         }}
       >
         <Provider>
