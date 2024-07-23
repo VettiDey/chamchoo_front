@@ -23,7 +23,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       <SWRConfig
         value={{
           fetcher: fetcher,
-          loadingTimeout: 10000
+          loadingTimeout: 15000
         }}
       >
         <Provider>
