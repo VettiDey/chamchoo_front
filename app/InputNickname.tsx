@@ -24,6 +24,7 @@ export const InputNickname = () => {
       <div>
         <Input
           label="닉네임"
+          placeholder="소환사명#태그"
           value={nickname}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
