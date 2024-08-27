@@ -62,6 +62,11 @@ const RadarChart = ({ data }: RadarChartProps) => {
         },
         grid: {
           // color: 'rgba(255, 255, 255, 0.2)' // 그리드 라인 색상 조절
+        },
+        pointLabels: {
+          font: {
+            size: 16
+          }
         }
       }
     },
