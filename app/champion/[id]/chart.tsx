@@ -10,7 +10,7 @@ export default function Chart() {
 
   return (
     <>
-      <div className="flex mx-32">
+      <div className="flex items-center justify-center mx-32">
         {champion && <RadarChart data={champion} />}
       </div>
     </>

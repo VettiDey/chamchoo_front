@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { siteConfig } from '@/config/site'
+import { useResetData } from '@/hooks/useResetData'
 
 const handleId = (id: string) => {
   if (id.includes('#')) {
@@ -18,6 +19,8 @@ const handleId = (id: string) => {
 export const InputNickname = () => {
   const [nickname, setNickname] = useState('')
   const router = useRouter()
+
+  useResetData()
 
   return (
     <>

@@ -13,11 +13,14 @@ interface AnalysisProps {
 }
 
 export default function Analysis({ data }: AnalysisProps) {
-  useHydrateAtoms([[analysisChampionAtom, data]])
+  console.log(data)
+  useHydrateAtoms([[analysisChampionAtom, data]], {
+    dangerouslyForceHydrate: true
+  })
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center mx-4">
+      <div className="flex flex-col items-center justify-center mx-4 my-8">
         <Protrait />
       </div>
       <Chart />

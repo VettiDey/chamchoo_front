@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Image from 'next/image'
+import { GiDynamite } from 'react-icons/gi'
 
 import { IconSvgProps } from '@/types'
 
 export const Logo = ({ width = 36, height = 36 }) => (
-  <Image alt="logo" height={height} src={'/logo.webp'} width={width} />
+  <GiDynamite height={height} width={width} />
 )
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({

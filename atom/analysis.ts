@@ -1,9 +1,10 @@
 import { atom } from 'jotai'
+import { atomWithReset } from 'jotai/utils'
 
 import { AnalysisResult } from '@/types/api'
 
-export const analysisPaginationAtom = atom(0)
-export const analysisChampionAtom = atom<AnalysisResult | null>(null)
+export const analysisPaginationAtom = atomWithReset(0)
+export const analysisChampionAtom = atomWithReset<AnalysisResult | null>(null)
 export const totalPageAtom = atom(
   (get) => get(analysisChampionAtom)?.length ?? 0
 )

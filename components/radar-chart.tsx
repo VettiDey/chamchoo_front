@@ -31,7 +31,7 @@ interface RadarChartProps {
 
 const RadarChart = ({ data }: RadarChartProps) => {
   const chartData = {
-    labels: ['공격', '로밍', '수비', '안정성', '야생성', '캐리성'],
+    labels: ['공격', '시야', '수비', '안정성', '야생성', '캐리성'],
     datasets: [
       {
         label: data.champion,

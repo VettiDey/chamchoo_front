@@ -20,8 +20,6 @@ const getAnalysisResult = async (id: string) => {
   const nickname = id.split('-')[0]
   const tagline = id.split('-')[1]
 
-  console.log(`/analysis-result/${nickname}/?tagline=${tagline}`)
-
   return await fetcher<AnalysisResult>(
     `/analysis-result/${nickname}/?tagline=${tagline}`
   )

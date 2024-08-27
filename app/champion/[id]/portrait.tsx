@@ -16,8 +16,9 @@ export default function Protrait() {
 
   return (
     <>
-      <Image isBlurred alt="Caitlyn" src={src} />
+      <Image isBlurred alt="Caitlyn" className="mx-8 my-8" src={src} />
       <Pagination
+        className="mt-8"
         initialPage={1}
         page={page + 1}
         total={total}
